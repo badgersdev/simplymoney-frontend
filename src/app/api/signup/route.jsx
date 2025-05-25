@@ -10,7 +10,7 @@ export async function POST(request) {
   return proxyRequest({
     request,
     method: "POST",
-    djangoPath: "/api/auth/signup",
+    djangoPath: "/auth/signup",
     sendJson: true,
   });
 }
