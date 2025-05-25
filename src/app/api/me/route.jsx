@@ -1,9 +1,6 @@
-import { cookies } from "next/headers";
-
-export async function GET() {
+export async function GET(request) {
   const baseUrl = process.env.DJANGO_API_BASE_URL;
-  const cookieStore = await cookies();
-  const token = cookieStore.get("auth-token")?.value;
+  const token = request.cookies.get("auth-token")?.value;
 
   if (!token) {
     return new Response(
