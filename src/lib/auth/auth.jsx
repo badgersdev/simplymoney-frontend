@@ -25,9 +25,9 @@ export async function setToken(authToken) {
     name: TOKEN_NAME,
     value: authToken,
     httpOnly: true, //IMPORTANT for security!!!. PREVENT JavaScript from seeing cookie
-    secure: process.env.NODE_ENV !== "development",
+    secure: true,
     maxAge: TOKEN_AGE,
-    sameSite: "strict",
+    sameSite: "none",
   });
 }
 
@@ -37,9 +37,9 @@ export async function setRefreshToken(refreshToken) {
     name: TOKEN_REFRESH_NAME,
     value: refreshToken,
     httpOnly: true, //IMPORTANT for security!!!. PREVENT JavaScript from seeing cookie
-    secure: process.env.NODE_ENV !== "development",
+    secure: true,
     maxAge: TOKEN_AGE,
-    sameSite: "strict",
+    sameSite: "none",
   });
 }
 
